@@ -1,6 +1,5 @@
     #include <iostream>
     #include <string>
-    #include <locale.h>
     #include <float.h>
     #include <limits.h>
     int main()
