@@ -12,9 +12,6 @@ void task1()
         }
         std::cout << "\n";
     }
-
-
-    std::cout << std::endl;
 }
 void task2()
 {
