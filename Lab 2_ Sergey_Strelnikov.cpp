@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 void task1()
 {
     std::cout << "Введите число" << std::endl;
@@ -12,14 +12,22 @@ void task1()
         }
         std::cout << "\n";
     }
+    std::cout << std::endl;
 }
 void task2()
 {
-
-
+    int n = 0;
+    std::cout << "Нахождение биномиальных коэффициентов: ";
+    std::cin >> n;
+    int cnk = 1;
+    for (int k = 1; k <= n; k++)
+    {
+        std::cout << cnk << std::endl;
+        cnk = cnk * (n - (k - 1)) / (k);
+    }
 }
 void task3()
-{
+{   
     int k, s = 0, q = 0;
     std::cout << "Введите набор чисел" << std::endl;
     do {
