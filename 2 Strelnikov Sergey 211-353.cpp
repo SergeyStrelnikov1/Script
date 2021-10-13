@@ -35,7 +35,8 @@ void task3()
         s = s + k;
         if (k != 0)
             q++;
-    } while (k != 0);
+    }
+    while (k != 0);
     std::cout << "Среднее значение : " << s / q << std::endl;
 
 }
