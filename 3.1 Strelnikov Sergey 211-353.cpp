@@ -20,19 +20,10 @@ void task1()
 {
 	int bubbleNotSortingArr[1001];
 	int *sortingArrBubble;
-
 	int size;
-	do 
-	{ 
-		cout << "Введите размер: " << endl;
-		cin >> size;
-		if (size < 0) 
-		{
-			cout << "Размер должен быть положительным числом";
-		}
-	}
-	while (size < 0);
-
+	
+	cout << "Введите размер: " << endl;
+	cin >> size;
 	for (int i = 0; i < size; i++) 
 	{
 		cout << "Введите число: " << endl;
@@ -79,15 +70,8 @@ void task2()
 	char *sortingArrByCounting;
 
 	int size;
-	do 
-	{ 
-		cout << "Введите размер: " << endl;
-		cin >> size;
-		if (size < 0) {
-			cout << "Размер должен быть положительным числом";
-		}
-	} 
-	while (size < 0);
+	cout << "Введите размер: " << endl;
+	cin >> size;
 	for (int i = 0; i < size; i++)
 	{
 		cout << "Введите символ: " << endl;
@@ -147,16 +131,8 @@ void task3()
 	int *sortingArrMerge = new int[1001]; 
 
 	int size;
-	do 
-	{ 
-		cout << "Введите размер: " << endl;
-		cin >> size;
-		if (size < 0)
-		{
-			cout << "Размер должен быть положительным числом";
-		}
-	} while (size < 0);
-
+	cout << "Введите размер: " << endl;
+	cin >> size;
 	for (int i = 1; i <= size; i++) 
 	{
 		cout << "Введите число: " << endl;
