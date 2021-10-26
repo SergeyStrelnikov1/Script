@@ -1,163 +1,166 @@
 #include <iostream>
 using namespace std;
-int* bubbleSorting(int bubbleSortingArr[1001], int size) 
+
+int* bubblesorting(int bubblearr[1001], int size)
 {
-	for (int i = 0; i < size; i++) 
+	for (int i = 0; i < size; i++)
 	{
 		for (int j = 0; j < size - i - 1; j++)
 		{
-			if (bubbleSortingArr[j] > bubbleSortingArr[j + 1]) 
+			if (bubblearr[j] > bubblearr[j + 1])
 			{
-				int t = bubbleSortingArr[j];
-				bubbleSortingArr[j] = bubbleSortingArr[j + 1];
-				bubbleSortingArr[j + 1] = t;
+				swap(bubblearr[j + 1], bubblearr[j]);
 			}
 		}
 	}
-	return bubbleSortingArr;
+	return bubblearr;
 }
-void task1() 
+
+void task1()
 {
-	int bubbleNotSortingArr[1001];
-	int *sortingArrBubble;
+	int notsortingarr[1001];
+	int* sorting;
 	int size;
-	
-	cout << "Введите размер: " << endl;
+
+	cout << "Размер массива: " << endl;
 	cin >> size;
-	for (int i = 0; i < size; i++) 
+
+	while (size < 0);
+
+	for (int i = 0; i < size; i++)
 	{
 		cout << "Введите число: " << endl;
-		cin >> bubbleNotSortingArr[i];
+		cin >> notsortingarr[i];
 	}
-	cout << "Массив отсартированный пузырьковой сортировкой: " << endl;
-	sortingArrBubble = bubbleSorting(bubbleNotSortingArr, size);
-	for (int i = 0; i < size; i++) 
+	cout << "Массив отсартированный пузырьком: " << endl;
+
+	sorting = bubblesorting(notsortingarr, size);
+
+	for (int i = 0; i < size; i++)
 	{
-		cout << sortingArrBubble[i] << '\t';
+		cout << sorting[i] << '\t';
 	}
 	cout << endl;
 }
-char* sortingByCounting(char byCountingNotSortingArr[1001], int size) 
+char* sortingcounting(char notsortarr[1001], int size)
 {
-	int numberOfDifferentElements = 26;
-	int counting[numberOfDifferentElements] = { 0 };
+	const int alf = 26;
+	int counting[alf]{ 0 };
 	int j;
-	for (int i = 0; i < size; i++) {
-		j = (int)(byCountingNotSortingArr[i] - 'a');
+	for (int i = 0; i < size; i++)
+	{
+		j = (int)(notsortarr[i] - 'a');
 		counting[j]++;
 	}
 	j = 0;
 	int i = 0;
-	while (j <= numberOfDifferentElements) 
+	while (j <= alf)
 	{
-		if (counting[j] > 0) 
+		if (counting[j] > 0)
 		{
-			byCountingNotSortingArr[i] = (char)((int)('a') + j);
+			notsortarr[i] = (char)((int)('a') + j);
 			i++;
 			counting[j]--;
 		}
-		else 
+		else
 		{
 			j++;
 		}
 	}
-	return byCountingNotSortingArr;
+	return notsortarr;
 }
-
-void task2() 
+void task2()
 {
-	char byCountingNotSortingArr[1001]; 
-	char *sortingArrByCounting;
-
+	char notsortingarr[1001];
+	char* counting;
 	int size;
-	cout << "Введите размер: " << endl;
+
+	cout << "Размер массива: " << endl;
 	cin >> size;
+
 	for (int i = 0; i < size; i++)
 	{
-		cout << "Введите символ: " << endl;
-		cin >> byCountingNotSortingArr[i];
+		cout << "Введите символ" << endl;
+		cin >> notsortingarr[i];
 	}
-	cout << "Массив отсартированный подсчетной сортировкой: " << endl;
-	sortingArrByCounting = sortingByCounting(byCountingNotSortingArr, size);
-	for (int i = 0; i < size; i++) 
+	cout << "Массив отсортированный подсчетом: " << endl;
+	counting = sortingcounting(notsortingarr, size);
+	for (int i = 0; i < size; i++)
 	{
-		cout << sortingArrByCounting[i] << '\t';
+		cout << counting[i] << "\t";
 	}
 	cout << endl;
-}
 
-void Merge(int *sortingArrMerge, int left, int right) 
+}
+void Merge(int* sortingmerge, int left, int right)
 {
-	int middle, beginningOfLeftPart, beginningOfRightPart;
-	int *mas = new int[1001];
+	int middle;
+	int beginofleft;
+	int beginofright;
+	int* arr = new int[1001];
 
 	middle = (left + right) / 2;
-	beginningOfLeftPart = left;
-	beginningOfRightPart = middle + 1;
-
-	for (int j = left; j <= right; j++) 
+	beginofleft = left;
+	beginofright = middle + 1; 
+	for (int i = left; i <= right; i++)
 	{
-		if ((beginningOfLeftPart <= middle) && ((beginningOfRightPart > right) || (sortingArrMerge[beginningOfLeftPart] < sortingArrMerge[beginningOfRightPart]))) 
 		{
-			mas[j] = sortingArrMerge[beginningOfLeftPart];
-			beginningOfLeftPart++;
+			arr[i] = sortingmerge[beginofleft];
+			beginofleft++;
 		}
-		else 
+		else
 		{
-			mas[j] = sortingArrMerge[beginningOfRightPart];
-			beginningOfRightPart++;
+			arr[i] = sortingmerge[beginofright];
+			beginofright++;
 		}
 	}
-
-	for (int j = left; j <= right; j++) 
+	for (int i = left; i <= right; i++)
 	{
-		sortingArrMerge[j] = mas[j];
+		sortingmerge[i] = arr[i];
 	}
 }
-
-void MergeSorting(int *sortingArrMerge, int left, int right) 
+void mergesort(int* sortingmerge, int left, int right)
 {
-	if (left < right) 
+	if (left < right)
 	{
 		int middle = (left + right) / 2;
-		MergeSorting(sortingArrMerge, left, middle); 
-		MergeSorting(sortingArrMerge, middle + 1, right); 
-		Merge(sortingArrMerge, left, right);
+		mergesort(sortingmerge, left, middle);
+		mergesort(sortingmerge, middle + 1, right);
+		Merge(sortingmerge, left, right);
+
 	}
 }
-
-void task3() 
+void task3()
 {
-	int *sortingArrMerge = new int[1001]; 
-
+	int* sortingmerge = new int[1001];
 	int size;
 	cout << "Введите размер: " << endl;
 	cin >> size;
-	for (int i = 1; i <= size; i++) 
+	while (size < 0);
+	for (int i = 1; i <= size; i++)
 	{
 		cout << "Введите число: " << endl;
-		cin >> sortingArrMerge[i];
+		cin >> sortingmerge[i];
+
+
 	}
-	cout << "Массив отсартированный сортировкой слияния: " << endl;
-
-	MergeSorting(sortingArrMerge, 1, size);
-
-	for (int i = 1; i <= size; i++) 
+	cout << "Массив отсортированый слиянием: " << endl;
+	Merge(sortingmerge, 1, size);
+	for (int i = 1; i <= size; i++)
 	{
-		cout << sortingArrMerge[i] << '\t';
+		cout << sortingmerge[i] << "\t";
 	}
 	cout << endl;
 }
-
 int main()
 {
-	setlocale(LC_ALL, "Russian");
-	int n = 0;
+	setlocale(LC_ALL, "ru");
+	int choise = 0;
 	while (true)
 	{
-		cout << "1. По возрастанию по алгоритму пузырьковой \n" << "2. По возрастанию по алгоритму сортировки подсчетом \n" << "3. По возрастанию по алгоритму сортировки слиянием \n" << "4. Выход \n" << endl;
-		cin >> n;
-		switch (n)
+		cout << "1. Сортировка массива пузырьком \n" << "2. Сортировка массива подсчетом \n" << "3. Сортировка массива слиянием \n" << "4. Выход \n" << endl;
+		cin >> choise;
+		switch (choise)
 		{
 		case 1:
 		{
@@ -174,10 +177,17 @@ int main()
 			task3();
 			break;
 		}
-		default:
+		case 4:
 		{
 			return 0;
+			break;
 		}
+		default:
+		{
+			cout << "Некорректный ввод, такого значения нет" << endl;
+		}
+
 		}
 	}
+	return 0;
 }
