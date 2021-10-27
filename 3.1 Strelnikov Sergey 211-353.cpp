@@ -25,7 +25,7 @@ void task1()
 	cout << "Размер массива: " << endl;
 	cin >> size;
 
-	while (size < 0);
+	
 
 	for (int i = 0; i < size; i++)
 	{
@@ -101,17 +101,18 @@ void Merge(int* sortingmerge, int left, int right)
 
 	middle = (left + right) / 2;
 	beginofleft = left;
-	beginofright = middle + 1; 
+	beginofright = middle + 1;
 	for (int i = left; i <= right; i++)
 	{
+		if ((beginofleft <= middle) && ((beginofright > right) || ((sortingmerge[beginofleft]) < (sortingmerge[beginofright]))))
 		{
 			arr[i] = sortingmerge[beginofleft];
 			beginofleft++;
 		}
 		else
 		{
-			arr[i] = sortingmerge[beginofright];
-			beginofright++;
+		arr[i] = sortingmerge[beginofright];
+		beginofright++;
 		}
 	}
 	for (int i = left; i <= right; i++)
@@ -136,7 +137,7 @@ void task3()
 	int size;
 	cout << "Введите размер: " << endl;
 	cin >> size;
-	while (size < 0);
+	
 	for (int i = 1; i <= size; i++)
 	{
 		cout << "Введите число: " << endl;
