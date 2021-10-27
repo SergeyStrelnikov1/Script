@@ -1,0 +1,14 @@
+﻿"Strelnikov Sergey.exe" (Win32). Загружено "C:\Users\terme\source\repos\Strelnikov Sergey\Debug\Strelnikov Sergey.exe". Символы загружены.
+"Strelnikov Sergey.exe" (Win32). Загружено "C:\Windows\SysWOW64\ntdll.dll". 
+"Strelnikov Sergey.exe" (Win32). Загружено "C:\Windows\SysWOW64\kernel32.dll". 
+"Strelnikov Sergey.exe" (Win32). Загружено "C:\Windows\SysWOW64\KernelBase.dll". 
+"Strelnikov Sergey.exe" (Win32). Загружено "C:\Windows\SysWOW64\msvcp140d.dll". 
+"Strelnikov Sergey.exe" (Win32). Загружено "C:\Windows\SysWOW64\vcruntime140d.dll". 
+"Strelnikov Sergey.exe" (Win32). Загружено "C:\Windows\SysWOW64\ucrtbased.dll". 
+Поток 0x4d4 завершился с кодом 0 (0x0).
+Поток 0x3bd8 завершился с кодом 0 (0x0).
+Поток 0xdd8 завершился с кодом 0 (0x0).
+"Strelnikov Sergey.exe" (Win32). Загружено "C:\Windows\SysWOW64\kernel.appcore.dll". 
+"Strelnikov Sergey.exe" (Win32). Загружено "C:\Windows\SysWOW64\msvcrt.dll". 
+Поток 0x4970 завершился с кодом 0 (0x0).
+Программа "[2620] Strelnikov Sergey.exe" завершилась с кодом 0 (0x0).
