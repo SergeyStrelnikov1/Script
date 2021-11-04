@@ -1,47 +1,39 @@
 #include <iostream>
 using namespace std;
-void task1(int * &mas, int * size) 
+void task1(int*& mas, int* size)
 {
-	do 
-	{
-		cout << "Введите размер массива: ";
-		cin >> *size;
-		if (*size < 0) 
-		{
-			cout << "Некоректный ввод";
-		}
-	} while (*size < 0);
-	
+	cout << "Введите размер массива ";
+	cin >> *size;
 	mas = new int[*size];
-
-	for (int i = 0; i < *size; i++) 
+	for (int i = 0; i < *size; i++)
 	{
-		cout << "Введите число: " << endl;
+		cout << "Ввод массива" << endl;
 		cin >> mas[i];
-	}
-}
 
-void task2(int * &mas, int * size)
+	}
+	
+}
+void task2(int*& mas, int* size)
 {
-	if (*size != 0) {
-		for (int i = 0; i < *size; i++) 
+	if (*size != 0)
+	{
+		for (int i = 0; i < *size; i++)
 		{
 			cout << mas[i] << "\t";
 		}
 		cout << endl;
 	}
-	else 
+	else
 	{
 		cout << "Массив не заполнен" << endl;
 	}
 }
 
-int sumOfDigitInEvenPlaces(int num) 
-{
+
+int sum(int num) {
 	int sum = 0;
 
-	while (num > 0) 
-	{
+	while (num > 0) {
 		sum += num % 100 / 10;
 		num /= 100;
 	}
@@ -49,100 +41,103 @@ int sumOfDigitInEvenPlaces(int num)
 	return sum;
 }
 
-void sortingForTask3(int * mas, int * size) 
-{
+void sort(int* mas, int* size) {
 	bool checkSort = true;
 
 	while (checkSort) {
 		checkSort = false;
 
 		for (int i = 0; i < *size - 1; i++) {
-			if (sumOfDigitInEvenPlaces(mas[i]) > sumOfDigitInEvenPlaces(mas[i + 1]) || ((sumOfDigitInEvenPlaces(mas[i]) == sumOfDigitInEvenPlaces(mas[i + 1])) && (mas[i] > mas[i + 1]))) 
+			if (sum(mas[i]) > sum(mas[i + 1]) || ((sum(mas[i]) == sum(mas[i + 1])) && (mas[i] > mas[i + 1]))) 
 			{
-				int temp = mas[i];
-				mas[i] = mas[i + 1];
-				mas[i + 1] = temp;
-
+				swap(mas[i], mas[i + 1]);
 				checkSort = true;
 			}
 		}
 	}
 }
 
-void task3(int * &mas, int * size) 
-{
-	if (*size != 0) 
-	{
-		sortingForTask3(mas, size);
-		task2(mas, size);
-	} else 
-	{
-		cout << "Массив не заполнен" << endl;
-	}
-}
-
-void sortingForTask4(int * mas, int * size) 
-{
-	for (int i = 0; i < * size; i++) 
-	{
-		for (int j = 0; j < * size - i - 1; j++) 
-		{
-			if (((mas[j] % 10) > (mas[j + 1] % 10)) || (((mas[j] % 10) == (mas[j + 1] % 10)) && (mas[j] < mas[j + 1]))) 
-			{
-				int t = mas[j];
-				mas[j] = mas[j + 1];
-				mas[j + 1] = t;
-			}
-		}
-	}
-}
-
-void task4(int * &mas, int * size) 
-{
+void task3(int*& mas, int* size) {
 	if (*size != 0) {
-		sortingForTask4(mas, size);
+		sort(mas, size);
 		task2(mas, size); 
 	}
-	else 
-	{
+	else {
 		cout << "Массив не заполнен" << endl;
 	}
 }
-
-int main() 
+void sort2(int *mas, int* size)
 {
-	setlocale(LC_ALL, "Russian");
-	int *mas;
-	int size = 0;
-	int choice = 0;
-	while (true) { 
-	    cout << "1. Вывод массива\n" << "2. Вывод массива в консоль\n" << "3. Сортировка по сумме цифр, стоящих на четных местах\n" << "4. Отсортировать массив вначале по возрастанию последней цифры, а при совпадении последних цифр - по убыванию\n"<<"5. Выход\n" << std::endl;
-        cin >> choice;
-		switch (choice) 
+	for (int i = 0; i < *size; i++)
+	{
+		for (int j = 0; j < *size - i - 1; j++)
 		{
-			case 1: {
-			    task1(mas, &size);
-				break;
-			}
-			case 2: 
+			if (((mas[j % 10] > mas[j + 1] % 10)) || ((mas[j % 10] == (mas[j + 1] % 10)) && (mas[j] < mas[j + 1])))
 			{
-			    task2(mas, &size);
-				break;
-			}
-			case 3: 
-			{
-				task3(mas, &size);
-				break;
-			}
-			case 4: 
-			{
-				task4(mas, &size);
-				break;
-			}
-			default: 
-			{
-				return 0;
+				swap(mas[i], mas[i + 1]);
 			}
 		}
+	}
+	 
+}
+void task4(int*& mas, int* size)
+{
+	if (*size != 0)
+	{
+		sort2(mas, size);
+		task2(mas, size);
+	}
+	else
+	{
+		cout << "Массив не заполнен" << endl;
+	}
+	
+}
+int main ()
+{
+	setlocale(LC_ALL, "ru");
+	int* mas;
+	int size = 0;
+	int choise = 0;
+	while (true)
+	{
+		cout << "1. Ввод массива \n" << "2. Вывод массива в консоль\n" << "3. Сортировка по сумме цифр, стоящих на четных местах\n" << "4. Отсортировать массив вначале по возрастанию последней цифры, а при совпадении последнихцифр - по убыванию.\n" << "5. выход \n" << endl;
+		cin >> choise;
+		switch (choise)
+		{
+		case 1:
+		{
+			task1(mas, &size);
+			break;
+		}
+		case 2:
+		{
+			task2(mas, &size);
+			break;
+		}
+		case 3:
+		{
+			task3(mas, &size);
+			break;
+		}
+		case 4:
+		{
+			task4(mas, &size);
+			break;
+		}
+		case 5:
+		{
+			return 0;
+			break;
+		}
+		default:
+		{
+			cout << "Введен не корректный номер" << endl;
+		}
+
+		}
+
+
+
 	}
 }
