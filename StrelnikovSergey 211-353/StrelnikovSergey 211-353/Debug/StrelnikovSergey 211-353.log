@@ -1,0 +1,4 @@
+﻿  StrelnikovSergey 211-353.cpp
+C:\Users\terme\source\repos\StrelnikovSergey 211-353\StrelnikovSergey 211-353\StrelnikovSergey 211-353.cpp(16,23): warning C4309: инициализация: усечение константного значения
+C:\Users\terme\source\repos\StrelnikovSergey 211-353\StrelnikovSergey 211-353\StrelnikovSergey 211-353.cpp(23,30): warning C4305: инициализация: усечение из "int" в "bool"
+  StrelnikovSergey 211-353.vcxproj -> C:\Users\terme\source\repos\StrelnikovSergey 211-353\Debug\StrelnikovSergey 211-353.exe
