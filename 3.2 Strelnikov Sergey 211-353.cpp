@@ -127,6 +127,7 @@ int main ()
 		}
 		case 5:
 		{
+		    	delete[] mas;
 			return 0;
 			break;
 		}
