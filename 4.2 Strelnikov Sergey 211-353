@@ -1,1 +1,75 @@
+#include <iostream>
+using namespace std;
+void task1()
+{
+
+}
+void task2()
+{
+
+}
+void task3()
+{
+
+}
+void task4()
+{
+
+}
+void task5()
+{
+
+}
+void task6()
+{
+
+}
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    int choise = 0;
+    while (true)
+    {
+        cout << "\n1) Расширение\n" << "2) Название\n" << "3) Расположение\n" << "4) Название диска\n" << "5) Переименовать файл\n" << "6) Копия файла\n"<<"7) Выход\n";        
+        cin >> choise;
+        switch (choise)
+        {
+        case 1:
+        {
+            task1();
+            break;
+        }
+        case 2:
+        {
+            task2();
+            break;
+        }
+        case 3:
+        {
+            task3();
+            break;
+        }
+        case 4:
+        {
+            task4();
+            break;
+        }
+        case 5:
+        {
+            task5();
+            break;
+        }
+        case 6:
+        {
+            task6();
+            break;
+        }
+        case 7:
+        {
+            return 0;
+            break;
+        }
+        }
+    }
+}
 
