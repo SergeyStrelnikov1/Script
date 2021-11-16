@@ -11,7 +11,7 @@ void task1(int*& mas, int* size)
 		cin >> mas[i];
 
 	}
-	
+
 }
 void task2(int*& mas, int* size)
 {
@@ -48,7 +48,7 @@ void sort(int* mas, int* size) {
 		checkSort = false;
 
 		for (int i = 0; i < *size - 1; i++) {
-			if (sum(mas[i]) > sum(mas[i + 1]) || ((sum(mas[i]) == sum(mas[i + 1])) && (mas[i] > mas[i + 1]))) 
+			if (sum(mas[i]) > sum(mas[i + 1]) || ((sum(mas[i]) == sum(mas[i + 1])) && (mas[i] > mas[i + 1])))
 			{
 				swap(mas[i], mas[i + 1]);
 				checkSort = true;
@@ -60,40 +60,42 @@ void sort(int* mas, int* size) {
 void task3(int*& mas, int* size) {
 	if (*size != 0) {
 		sort(mas, size);
-		task2(mas, size); 
+		task2(mas, size);
 	}
 	else {
 		cout << "Массив не заполнен" << endl;
 	}
 }
-void sort2(int *mas, int* size)
+
+
+void sort4(int *mas, int *size) 
 {
-	for (int i = 0; i < *size; i++)
+	for (int i = 0; i < *size; i++) 
 	{
-		for (int j = 0; j < *size - i - 1; j++)
+		for (int j = 0; j < *size - i - 1; j++) 
 		{
-			if (((mas[j % 10] > mas[j + 1] % 10)) || ((mas[j % 10] == (mas[j + 1] % 10)) && (mas[j] < mas[j + 1])))
+			if (((mas[j] % 10) > (mas[j + 1] % 10)) || (((mas[j] % 10) == (mas[j + 1] % 10)) && (mas[j] < mas[j + 1]))) 
 			{
-				swap(mas[i], mas[i + 1]);
+				swap(mas[j], mas[j+1]);
 			}
 		}
 	}
-	 
 }
-void task4(int*& mas, int* size)
+
+void task4(int *&mas, int *size) 
 {
 	if (*size != 0)
 	{
-		sort2(mas, size);
-		task2(mas, size);
+		sort4(mas, size);
+		task2(mas, size); 
 	}
-	else
+	else 
 	{
 		cout << "Массив не заполнен" << endl;
 	}
-	
 }
-int main ()
+
+int main()
 {
 	setlocale(LC_ALL, "ru");
 	int* mas;
@@ -127,7 +129,7 @@ int main ()
 		}
 		case 5:
 		{
-		    	delete[] mas;
+			delete[] mas;
 			return 0;
 			break;
 		}
