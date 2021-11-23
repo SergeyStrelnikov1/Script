@@ -15,6 +15,7 @@ string file_name(const string file_path_full)
     name = file_path_full;
     name.erase(0, file_path_full.rfind("\\") + 1);
     name.erase(name.rfind("."));
+    return name;
 }
 string file_path(const string file_path_name)
 {
@@ -96,53 +97,56 @@ int main()
     string file_path_full;
     bool retult;
     cout << "Input path to file : ";
+
     cin >> file_path_full;
+
     while (true)
     {
-        cout << "1. task \n" << "2. task \n" << "3. task \n" << "4. task \n" << "5. task \n" << "6. task \n" << "7. task\n";
+        cout << "\n1.file format \n" << "2.file_name \n" << "3.file_path \n" << "4.file_disk \n" << "5.file_rename \n" << "6.file_copy5 \n" << "7. exit\n";
+        cin >> choise;
         switch (choise)
         {
-        case 1:
-        {
-            cout << "file format";
-            cout << file_format(file_path_full) << endl;
-            break;
-        }
-        case 2:
-        {
-            cout << "file_name";
-            cout << file_name(file_path_full) << endl;
-            break;
-        }
-        case 3:
-        {
-            cout << "file_path";
-            cout << file_path(file_path_full);
-            break;
-        }
-        case 4:
-        {
-            cout << "file_disk ";
-            cout << file_disk(file_path_full);
-            break;
-        }
-        case 5:
-        {
-            cout << "file_rename";
-            cout << file_rename(file_path_full);
-            break;
-        }
-        case 6:
-        {
-            cout << "file_copy";
-            cout << file_rename(file_path_full);
-            break;
-        }
-        case 7:
-        {
-            return 0;
-            break;
-        }
+            case 1:
+            {
+                cout << "file format  ";
+                cout << file_format(file_path_full) << endl;
+                break;
+            }
+            case 2:
+            {
+                cout << "file_name  ";
+                cout << file_name(file_path_full) << endl;
+                break;
+            }
+            case 3:
+            {
+                 cout << "file_path  ";
+                 cout << file_path(file_path_full);
+                 break;
+            }
+            case 4:
+           {
+                cout << "file_disk ";
+                cout << file_disk(file_path_full);
+                break;
+           }
+           case 5:
+           {
+                cout << "file_rename  ";
+                cout << file_rename(file_path_full);
+                break;
+            }
+            case 6:
+            {
+                cout << "file_copy  ";
+                cout << file_copy(file_path_full);
+                break;
+            }
+            case 7:
+            {
+                return 0;
+                break;
+            }
 
 
         }
