@@ -40,55 +40,36 @@ bool file_rename(string& file_path_name)
     file_path_name = path + name + "." + format;
     return true;
 }
-bool file_copy(const string file_path_full)
+string file_path_copy(const string* file_path_full)
 {
-    string name, path, format, new_path_full;
-    bool isopen;
-    name = file_name(file_path_full);
-    name.append("_copy");
-    path = file_path(file_path_full);
-    format = file_format(file_path_full);
-    new_path_full.append(path);
-    new_path_full.append(name);
-    new_path_full.append(".");
-    new_path_full.append(format);
-    ifstream infile(file_path_full, ios::binary);
-    isopen = infile.is_open();
+    string path_copy = *file_path_full;
+    const auto pos = file_path_full->find_last_of(".");
+    path_copy.insert(pos, "_copy");
+    return path_copy;
 
-    if (isopen == 1)
-    {
-        cout << "file is open\n";
-
-        infile.seekg(0, ios_base::end);
-        cout << "file volyme: " << infile.tellg() << endl;
-        long size = infile.tellg();
-        infile.seekg(0);
-
-        char* buffer = new char[size];
-
-        infile.read(buffer, size);
-
-        ofstream outfile(new_path_full, ios::binary);
-
-        if (outfile.is_open())
-        {
-            outfile.write(buffer, size);
-
-            delete[] buffer;
-            infile.close();
-            outfile.close();
-            return true;
-        }
-        else
-        {
-            infile.close();
-            return false;
-        }
-    }
-    else
+}
+bool file_copy(const string* file_path_full)
+{
+    char *buffer;
+    int len = 256;
+    ifstream in(* file_path_full, ios_base::in);
+    ofstream out(file_path_copy(file_path_full), ios_base::out);
+    if (!in || !out)
     {
         return false;
     }
+    buffer = new char[len];
+    while (!in.eof())
+    {
+        in.read(buffer, len);
+        if (in.gcount())
+        {
+            out.write(buffer, in.gcount());
+        }
+    }
+    in.close();
+    out.close();
+    delete[] buffer;
     return true;
 }
 int main()
@@ -102,44 +83,38 @@ int main()
 
     while (true)
     {
-        cout << "\n1.file format \n" << "2.file_name \n" << "3.file_path \n" << "4.file_disk \n" << "5.file_rename \n" << "6.file_copy5 \n" << "7. exit\n";
+        cout << "\n1.file format \n" << "2.file_name \n" << "3.file_path \n" << "4.file_disk \n" << "5.file_rename \n" << "6.file_copy \n" << "7. exit\n";
         cin >> choise;
         switch (choise)
         {
             case 1:
             {
-                cout << "file format  ";
                 cout << file_format(file_path_full) << endl;
                 break;
             }
             case 2:
             {
-                cout << "file_name  ";
                 cout << file_name(file_path_full) << endl;
                 break;
             }
             case 3:
             {
-                 cout << "file_path  ";
                  cout << file_path(file_path_full);
                  break;
             }
             case 4:
            {
-                cout << "file_disk ";
                 cout << file_disk(file_path_full);
                 break;
            }
            case 5:
            {
-                cout << "file_rename  ";
                 cout << file_rename(file_path_full);
                 break;
             }
             case 6:
             {
-                cout << "file_copy  ";
-                cout << file_copy(file_path_full);
+                cout << file_copy(&file_path_full);
                 break;
             }
             case 7:
