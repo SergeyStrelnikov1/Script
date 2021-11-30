@@ -43,7 +43,7 @@ bool file_rename(string& file_path_name)
 string file_path_copy(const string* file_path_full)
 {
     string path_copy = *file_path_full;
-    const auto pos = file_path_full->find_last_of(".");
+    const pos = file_path_full->find_last_of(".");
     path_copy.insert(pos, "_copy");
     return path_copy;
 
