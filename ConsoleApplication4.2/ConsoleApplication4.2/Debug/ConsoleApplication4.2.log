@@ -1,0 +1,3 @@
+﻿  ConsoleApplication4.2.cpp
+C:\Users\terme\source\repos\ConsoleApplication4.2\ConsoleApplication4.2\ConsoleApplication4.2.cpp(79,10): warning C4101: retult: неиспользованная локальная переменная
+  ConsoleApplication4.2.vcxproj -> C:\Users\terme\source\repos\ConsoleApplication4.2\Debug\ConsoleApplication4.2.exe
