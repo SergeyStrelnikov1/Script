@@ -1,0 +1,14 @@
+﻿  5.4.cpp
+  Circle.cpp
+C:\Users\terme\source\repos\5.4\5.4\Circle.cpp(24,10): warning C4566: символ, представленный универсальным именем символа "\uFFFD", невозможно представить в текущей кодовой странице (1251)
+C:\Users\terme\source\repos\5.4\5.4\Circle.cpp(44,13): warning C4244: return: преобразование "const double" в "int", возможна потеря данных
+C:\Users\terme\source\repos\5.4\5.4\Circle.cpp(48,13): warning C4244: return: преобразование "const double" в "int", возможна потеря данных
+C:\Users\terme\source\repos\5.4\5.4\Circle.cpp(52,13): warning C4244: return: преобразование "const double" в "int", возможна потеря данных
+  CircleSquare.cpp
+  Square.cpp
+C:\Users\terme\source\repos\5.4\5.4\Square.cpp(24,10): warning C4566: символ, представленный универсальным именем символа "\uFFFD", невозможно представить в текущей кодовой странице (1251)
+C:\Users\terme\source\repos\5.4\5.4\Square.cpp(43,13): warning C4244: return: преобразование "const double" в "int", возможна потеря данных
+C:\Users\terme\source\repos\5.4\5.4\Square.cpp(47,13): warning C4244: return: преобразование "const double" в "int", возможна потеря данных
+C:\Users\terme\source\repos\5.4\5.4\Square.cpp(51,13): warning C4244: return: преобразование "const double" в "int", возможна потеря данных
+  Создание кода...
+  5.4.vcxproj -> C:\Users\terme\source\repos\5.4\Debug\5.4.exe
