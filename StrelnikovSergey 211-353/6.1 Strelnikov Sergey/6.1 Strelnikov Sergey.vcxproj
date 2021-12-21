@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1b80024a-39e1-4d04-80fd-c1a1c8a7958d}</ProjectGuid>
-    <RootNamespace>My32StrelnikovSergey211353</RootNamespace>
+    <ProjectGuid>{162262ec-3d98-4149-aa9f-12fe6553ad85}</ProjectGuid>
+    <RootNamespace>My61StrelnikovSergey</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>3.2 Strelnikov Sergey</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="3.2 Strelnikov Sergey 211-353.cpp" />
+    <ClCompile Include="6.1 Strelnikov Sergey.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
