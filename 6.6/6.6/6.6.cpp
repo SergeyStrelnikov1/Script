@@ -5,7 +5,6 @@ using namespace std;
 int main() 
 {
     string input;
-    cout << "Break: 1" << endl;
     map<string, int> mp;
 
     double count = 0;
@@ -28,6 +27,6 @@ int main()
 
     for (auto i : mp) 
     {
-        cout << i.first << " " << (float(i.second / count) * 100) << "%" << endl;
+        cout << i.first << " " << (double(i.second / count) * 100) << "%" << endl;
     }
 }

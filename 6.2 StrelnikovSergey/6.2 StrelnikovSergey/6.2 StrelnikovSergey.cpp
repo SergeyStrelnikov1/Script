@@ -75,8 +75,6 @@ int main()
 	cout << "1" << endl;
 	char input;
 	deque<char> deq;
-
-	cout << "Break: 1" << endl;
 	while (cin >> input) 
 	{
 		if (input == '1') 

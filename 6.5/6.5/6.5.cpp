@@ -4,14 +4,19 @@
 
 using namespace std;
 int main() 
+
 {
+    setlocale(LC_ALL, "ru");
+
+
     string surname;
     int group;
     list<string> listSurname;
     list<int> listGroup;
-    cout << "Break: 0 0" << endl;
+   
     while (true) 
     {
+        cout << "Номер группы, фамилия : " << endl;
         cin >> group >> surname;
         if (group == 0 || surname == "0")
         {
