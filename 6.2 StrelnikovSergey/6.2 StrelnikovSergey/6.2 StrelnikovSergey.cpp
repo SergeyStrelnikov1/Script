@@ -28,7 +28,7 @@ int rotate(int* A, int* B, int* C)
 	return (B[0] - A[0]) * (C[1] - B[1]) - (B[1] - A[1]) * (C[0] - B[0]);
 }
 
-deque<int> grahamscan(int(*A)[2], int n) 
+deque<int> graham(int(*A)[2], int n) 
 {
 	deque<int> P;
 	for (int i = 0; i < n; i++) 
@@ -72,12 +72,13 @@ deque<int> grahamscan(int(*A)[2], int n)
 
 int main() 
 {
-	cout << "1" << endl;
+	setlocale(LC_ALL, "ru");
+	cout << "1 Polindrom Check"  << endl;
 	char input;
 	deque<char> deq;
 	while (cin >> input) 
 	{
-		if (input == '1') 
+		if (input == '.') 
 		{
 			break;
 		}
@@ -90,12 +91,12 @@ int main()
 	}
 	else 
 	{
-		cout << "Not Polindrom" << endl;
+		cout << "No Polindrom" << endl;
 	}
-	cout << "2" << endl;
+	cout << "2 Graham" << endl;
 	int A[10][2] = { {3, 3}, {2, 1}, {6, 2}, {5, 4}, {7, 5},
 		{4, 9}, {1, 6}, {10, 7}, {8, 8}, {9, 10} };
-	for (int i : grahamscan(A, 10))
+	for (int i : graham(A, 10))
 	{
 		cout << (i + 1) << " ";
 	}
