@@ -30,13 +30,6 @@ bool modeQuicksortСomparison(T a, T b, string mode = "") {
 }
 
 template <typename T>
-void swapPlaces(T& a, T& b) {
-    T tt = a;
-    a = b;
-    b = tt;
-}
-
-template <typename T>
 void quicksort(T* arr, int maxi, string mode = "") {
     T mid;
 
